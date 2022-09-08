@@ -16,24 +16,29 @@ scrape_configs:
   - job_name: 'nodeexporter'
     scrape_interval: 5s
     static_configs:
-      - targets: ['nodeexporter:9100']
+      - targets: ['206.189.90.97:9100']
 
   - job_name: 'cadvisor'
     scrape_interval: 5s
     static_configs:
-      - targets: ['cadvisor:8080']
+      - targets: ['206.189.90.97:8080']
 
   - job_name: 'prometheus'
     scrape_interval: 10s
     static_configs:
-      - targets: ['localhost:9090']
+      - targets: ['206.189.90.97:9090']
 
   - job_name: 'pushgateway'
     scrape_interval: 10s
     honor_labels: true
     static_configs:
-      - targets: ['pushgateway:9091']
+      - targets: ['206.189.90.97:9091']
 
+  - job_name: 'shop_front'
+    scrape_interval: 10s
+    honor_labels: true
+    static_configs:
+      - targets: ['206.189.90.97:2000']
 
 alerting:
   alertmanagers:
